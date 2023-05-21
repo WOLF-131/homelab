@@ -32,7 +32,7 @@ sudo ufw --force enable
 # Install zsh
 echo -e "${Yellow}Install zsh${NC}"
 sudo apt install -y zsh
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh) $(whoami)
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install docker
