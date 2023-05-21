@@ -2,8 +2,6 @@
 
 # wget -O- https://raw.githubusercontent.com/wolf-131/homelab/main/installers/ubuntu-docker_installer.sh | bash
 
-export DEBIAN_FRONTEND=noninteractive
-
 # Colors
 Yellow='\033[0;33m'
 Cyan='\033[0;36m'
@@ -13,7 +11,7 @@ NC='\033[0m' # No Color
 
 echo -e "${Yellow}UPDATE SYSTEM${NC}"
 sudo apt update
-sudo apt upgrade
+sudo NEEDRESTART_MODE=a apt upgrade -y
 
 # inport ssh keys from github
 echo -e "${Yellow}Import ssh keys${NC}"
