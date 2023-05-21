@@ -17,24 +17,25 @@ sudo ssh-import-id-gh wolf-131
 
 # Install base packages
 echo -e "${Yellow}Install base packages${NC}"
-sudo apt install tldr kitty-terminfo nano neofetch htop nfs-common
+sudo apt install -y tldr kitty-terminfo nano neofetch htop nfs-common
+tldr -u
 
 # Install ufw
 echo -e "${Yellow}Install ufw${NC}"
-sudo apt install ufw
+sudo apt install -y ufw
 sudo ufw allow ssh
 sudo ufw allow http
 sudo ufw enable
 
 # Install zsh
 echo -e "${Yellow}Install zsh${NC}"
-sudo apt install zsh
+sudo apt install -y zsh
 chsh -s $(which zsh)
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install docker
 echo -e "${Yellow}Install docker${NC}"
-sudo apt-get install ca-certificates curl gnupg
+sudo apt install -y ca-certificates curl gnupg
 
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -45,9 +46,9 @@ echo \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt-get update
+sudo apt update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 sudo usermod -aG docker $USER
 
