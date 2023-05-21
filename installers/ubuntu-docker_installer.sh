@@ -1,28 +1,39 @@
 #! /bin/bash
 
+# Colors
+Yellow='\033[0;33m'
+Cyan='\033[0;36m'
+NC='\033[0m' # No Color
+
 # Installer file to setup ubuntu servert for docker compose
 
+echo -e "${Yellow}UPDATE SYSTEM${NC}"
 sudo apt update
 sudo apt upgrade
 
 # inport ssh keys from github
+echo -e "${Yellow}Import ssh keys${NC}"
 sudo ssh-import-id-gh wolf-131
 
 # Install base packages
+echo -e "${Yellow}Install base packages${NC}"
 sudo apt install tldr kitty-terminfo nano neofetch htop nfs-common
 
 # Install ufw
+echo -e "${Yellow}Install ufw${NC}"
 sudo apt install ufw
 sudo ufw allow ssh
 sudo ufw allow http
 sudo ufw enable
 
 # Install zsh
+echo -e "${Yellow}Install zsh${NC}"
 sudo apt install zsh
 chsh -s $(which zsh)
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install docker
+echo -e "${Yellow}Install docker${NC}"
 sudo apt-get install ca-certificates curl gnupg
 
 sudo install -m 0755 -d /etc/apt/keyrings
