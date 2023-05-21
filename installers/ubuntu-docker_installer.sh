@@ -55,4 +55,4 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
-sudo apt-get install docker-compose-plugin
+sudo apt install -y docker-compose-plugin
