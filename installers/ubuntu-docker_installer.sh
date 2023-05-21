@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# wget -O- https://raw.githubusercontent.com/wolf-131/homelab/main/installers/ubuntu-docker_installer.sh | bash
+
 export DEBIAN_FRONTEND=noninteractive
 
 # Colors
