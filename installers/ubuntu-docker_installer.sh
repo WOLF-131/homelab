@@ -1,5 +1,7 @@
 #! /bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 # Colors
 Yellow='\033[0;33m'
 Cyan='\033[0;36m'
@@ -25,7 +27,7 @@ echo -e "${Yellow}Install ufw${NC}"
 sudo apt install -y ufw
 sudo ufw allow ssh
 sudo ufw allow http
-sudo ufw enable
+sudo ufw --force enable
 
 # Install zsh
 echo -e "${Yellow}Install zsh${NC}"
