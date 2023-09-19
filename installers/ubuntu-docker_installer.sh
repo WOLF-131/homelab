@@ -13,8 +13,8 @@ sudo apt update
 sudo NEEDRESTART_MODE=a apt upgrade -y
 
 # Set hostname
-read -p "${Cyan}Set Hostname?${NC} " -n 1 -r $REPLY
-echo
+read -p "${Cyan}Set Hostname?${NC} " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   read -p "${Cyan}Enter hostname for server:${NC} " hostname
   echo
@@ -22,8 +22,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Set static IP Address
-read -p "${Cyan}Set static IP?${NC} " -n 1 -r $REPLY
-echo
+read -p "${Cyan}Set static IP?${NC} " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   read -p "${Cyan}Enter IP Address for server(192.168.xxx.xxx/xx):${NC} " address
   echo
@@ -41,16 +41,16 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Import ssh keys from github
-read -p "${Cyan}Import ssh keys from github?${NC} " -n 1 -r $REPLY
-echo
+read -p "${Cyan}Import ssh keys from github?${NC} " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Importing ssh keys${NC}"
   sudo ssh-import-id-gh wolf-131
 fi
 
 # Install base packages
-read -p "${Cyan}Install base packages?${NC} " -n 1 -r $REPLY
-echo
+read -p "${Cyan}Install base packages?${NC} " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Installing base packages${NC}"
   sudo apt install -y tldr kitty-terminfo nano neofetch htop nfs-common
@@ -58,8 +58,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Install ufw
-read -p "${Cyan}Install ufw?${NC} " -n 1 -r $REPLY
-echo
+read -p "${Cyan}Install ufw?${NC} " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Installing ufw${NC}"
   sudo apt install -y ufw
@@ -69,8 +69,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Install zsh
-read -p "${Cyan}Install zsh?${NC} " -n 1 -r $REPLY
-echo
+read -p "${Cyan}Install zsh?${NC} " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Installing zsh${NC}"
   sudo apt install -y zsh
@@ -79,8 +79,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Install docker
-read -p "${Cyan}Install docker?${NC} " -n 1 -r $REPLY
-echo
+read -p "${Cyan}Install docker?${NC} " -n 1 -r
+echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Installing docker${NC}"
   sudo apt install -y ca-certificates curl gnupg
