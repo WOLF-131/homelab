@@ -13,7 +13,7 @@ sudo apt update
 sudo NEEDRESTART_MODE=a apt upgrade -y
 
 # Set hostname
-read -p "${Cyan}Set Hostname?${NC} " -n 1 -r
+read -p "${Cyan}Set Hostname?${NC} " -n 1 -r $REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   read -p "${Cyan}Enter hostname for server:${NC} " hostname
@@ -22,7 +22,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Set static IP Address
-read -p "${Cyan}Set static IP?${NC} " -n 1 -r
+read -p "${Cyan}Set static IP?${NC} " -n 1 -r $REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   read -p "${Cyan}Enter IP Address for server(192.168.xxx.xxx/xx):${NC} " address
@@ -41,7 +41,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Import ssh keys from github
-read -p "${Cyan}Import ssh keys from github?${NC} " -n 1 -r
+read -p "${Cyan}Import ssh keys from github?${NC} " -n 1 -r $REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Importing ssh keys${NC}"
@@ -49,7 +49,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Install base packages
-read -p "${Cyan}Install base packages?${NC} " -n 1 -r
+read -p "${Cyan}Install base packages?${NC} " -n 1 -r $REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Installing base packages${NC}"
@@ -58,7 +58,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Install ufw
-read -p "${Cyan}Install ufw?${NC} " -n 1 -r
+read -p "${Cyan}Install ufw?${NC} " -n 1 -r $REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Installing ufw${NC}"
@@ -69,7 +69,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Install zsh
-read -p "${Cyan}Install zsh?${NC} " -n 1 -r
+read -p "${Cyan}Install zsh?${NC} " -n 1 -r $REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Installing zsh${NC}"
@@ -79,7 +79,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # Install docker
-read -p "${Cyan}Install docker?${NC} " -n 1 -r
+read -p "${Cyan}Install docker?${NC} " -n 1 -r $REPLY
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${Yellow}Installing docker${NC}"
